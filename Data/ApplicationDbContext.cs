@@ -7,8 +7,10 @@ namespace VehicleManagementSystem.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<User> users { get; set; }
-        public DbSet<Vehicle> vehicles { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Bookings> Booking { get; set; }
+        public DbSet<Inventory> Inventory { get; set; }
 
     }
 }

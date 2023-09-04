@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VehicleManagementSystem.Data;
+using VehicleManagementSystem.Repository;
 
 namespace VehicleManagementSystem.Extensions
 {
@@ -11,6 +12,11 @@ namespace VehicleManagementSystem.Extensions
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+            services.AddScoped<IBookingsRepository, BookingsRepository>();
+            services.AddScoped<IInventoryRepository, InventoryRepository>();
         }
     }
 }
